@@ -1,0 +1,9 @@
+Watching for file changes with StatReloader
+[14/Jan/2026 03:22:22] "GET /api/leaderboard/ HTTP/1.1" 200 63
+[14/Jan/2026 03:22:22] "GET /api/leaderboard/ HTTP/1.1" 200 63
+[14/Jan/2026 03:22:25] "GET /api/teams/ HTTP/1.1" 200 113
+[14/Jan/2026 03:22:25] "GET /api/teams/ HTTP/1.1" 200 113
+[14/Jan/2026 03:22:26] "GET /api/users/ HTTP/1.1" 200 262
+[14/Jan/2026 03:22:26] "GET /api/users/ HTTP/1.1" 200 262
+[14/Jan/2026 03:22:27] "GET /api/activities/ HTTP/1.1" 200 335
+[14/Jan/2026 03:22:27] "GET /api/activities/ HTTP/1.1" 200 335
