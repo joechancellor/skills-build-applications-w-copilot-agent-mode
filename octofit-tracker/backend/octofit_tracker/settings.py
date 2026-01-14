@@ -4,7 +4,15 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-REPLACE_ME_WITH_A_SECURE_KEY'
 DEBUG = True
-ALLOWED_HOSTS = ['*']
+
+# Configure allowed hosts for Codespace and localhost
+codespace_name = os.environ.get('CODESPACE_NAME')
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+if codespace_name:
+    ALLOWED_HOSTS.extend([
+        f'{codespace_name}-8000.app.github.dev',
+        f'{codespace_name}-8000.preview.app.github.dev'
+    ])
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
