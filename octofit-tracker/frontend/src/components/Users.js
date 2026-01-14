@@ -8,7 +8,12 @@ const Users = () => {
   const [selectedUser, setSelectedUser] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  const apiUrl = '/api/users/';
+  let apiUrl;
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    apiUrl = 'http://localhost:8000/api/users/';
+  } else {
+    apiUrl = 'https://' + window.location.hostname.replace('-3000.app.github.dev', '') + '-8000.app.github.dev/api/users/';
+  }
 
   useEffect(() => {
     fetch(apiUrl)

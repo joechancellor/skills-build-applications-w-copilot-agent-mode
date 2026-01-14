@@ -8,7 +8,12 @@ const Workouts = () => {
   const [selectedWorkout, setSelectedWorkout] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  const apiUrl = '/api/workouts/';
+  let apiUrl;
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    apiUrl = 'http://localhost:8000/api/workouts/';
+  } else {
+    apiUrl = 'https://' + window.location.hostname.replace('-3000.app.github.dev', '') + '-8000.app.github.dev/api/workouts/';
+  }
 
   useEffect(() => {
     fetch(apiUrl)

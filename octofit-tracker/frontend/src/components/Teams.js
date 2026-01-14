@@ -8,7 +8,12 @@ const Teams = () => {
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  const apiUrl = '/api/teams/';
+  let apiUrl;
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    apiUrl = 'http://localhost:8000/api/teams/';
+  } else {
+    apiUrl = 'https://' + window.location.hostname.replace('-3000.app.github.dev', '') + '-8000.app.github.dev/api/teams/';
+  }
 
   useEffect(() => {
     fetch(apiUrl)
